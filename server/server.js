@@ -10,12 +10,14 @@ const connectToMongo = () => {
 }
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json()); //middle ware to use req.body
 
 app.use('/server', require('./snippets'));
 
+
+
+connectToMongo();
 app.listen(process.env.PORT || 3636, () => {
     console.log(`server is running on port ${process.env.PORT || 3636}`);
 });
 
-connectToMongo();

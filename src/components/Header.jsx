@@ -6,7 +6,7 @@ function Header() {
     <header>
       <h1>
         <HighlightIcon />Keeper
-        <form action="../../post" method="post" 
+        <form action="/post" method="post" 
               className="form">
           <button type="submit">Connected?</button>
         </form>
