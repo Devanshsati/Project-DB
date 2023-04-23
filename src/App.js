@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Note from "./components/Note";
 import CreateArea from "./components/CreateArea";
-import Footer from "./components/Footer";
 
 function App() {
-
-  useEffect(() => {
-    fetch("http://localhost:3636/message")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
-  }, []);
-
   const [notes, setNotes] = useState([]);
 
   function addItem(newNote) {
@@ -29,6 +23,7 @@ function App() {
 
   return (
     <div>
+      <Header />
       <CreateArea onAdd={addItem} />
       {notes.map((noteItem, index) => {
         return (
